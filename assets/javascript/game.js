@@ -41,29 +41,32 @@ function youLose (){
 
 
 //The below function loss was meant to overcome the issue where even when the player score exceeded the random number the game would not register a loss until a crystal button was clicked again.
-//I understand that the cause of this bug is because the win/loss code is called inside the click listener, but was not able to get it to work properly if moved outside the click listener. 
+//I understand that the cause of this bug is because the win/loss code is called inside the click listener, but was not able to get it to work properly if moved outside the click listner. 
+// 
+//I tried to approach the issue using the function loss which would constantly check to see if the player score was ever equivalent or greater than the random number and run the win or loss code acordingly
 //function loss () {
-	// if (totalScore === randomNumber){
-	// 	$("#playerScore").html("Your Total Score: " + totalScore);
-	// 	win = true;
-	// 	alert("You Win! Press Play to play again!");
-	// 	console.log(win);
-	// 	wins = ++wins
-	// 	$("#winCount").html("Wins: " + wins);
+// 	if (totalScore === randomNumber){
+// 		$("#playerScore").html("Your Total Score: " + totalScore);
+// 		win = true;
+// 		alert("You Win! Press Play to play again!");
+// 		console.log(win);
+// 		wins = ++wins
+// 		$("#winCount").html("Wins: " + wins);
 
-	// 	letsPlay();
 
-	// }
-	// if (totalScore > randomNumber){
-	// 	$("#playerScore").html("Your Total Score: " + totalScore);
-	// 	lose = true;
-	// 	alert("You Lose! Press Play to play again!");
-	// 	losses = ++losses
-	// 	$("#lossCount").html("Losses: " + losses);
-	// 	console.log("You Lose!");
+// 	}
+// 	else if (totalScore > randomNumber){
+// 		$("#playerScore").html("Your Total Score: " + totalScore);
+// 		lose = true;
+// 		alert("You Lose! Press Play to play again!");
+// 		losses = ++losses
+// 		$("#lossCount").html("Losses: " + losses);
+// 		console.log("You Lose!");
 
-	// 	letsPlay();
-	// }
+// 	}
+// };
+
+// loss();
 
 
 
@@ -116,12 +119,7 @@ $("#greenCrystal").click(function setGreenCrystal() {
 		totalScore += greenCrystal;
 		console.log(totalScore);
 		$("#playerScore").html("Your Total Score: " + totalScore);
-			// if(totalScore == randomNumber){
-			// 	youWin();
-			// }
-			// else if(totalScore > randomNumber){
-			// 	youLose();
-			// }
+			
 	}
 
 	//loss();
@@ -147,12 +145,7 @@ $("#redCrystal").click(function setRedCrystal() {
 	totalScore += redCrystal;
 	console.log(totalScore);
 	$("#playerScore").html("Your Total Score: " + totalScore);
-		// if(totalScore == randomNumber){
-		// 	youWin();
-		// }
-		// else if(totalScore > randomNumber){
-		// 	youLose();
-		// }
+		
 	}
 	else if (totalScore === randomNumber){
 		win = true;
@@ -175,12 +168,7 @@ $("#blueCrystal").click(function setBlueCrystal() {
 	totalScore += blueCrystal;
 	console.log(totalScore);
 	$("#playerScore").html("Your Total Score: " + totalScore);
-		// if(totalScore == randomNumber){
-		// 	youWin();
-		// }
-		// else if(totalScore > randomNumber){
-		// 	youLose();
-		// }
+		
 	}
 	else if (totalScore === randomNumber){
 		win = true;
